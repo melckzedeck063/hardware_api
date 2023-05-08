@@ -44,6 +44,7 @@ dotenv.config({ path: './.env' })
 
 
 const app = express();
+mongoose.set('strictQuery', false)
 
 app.use(bodyParser.json({limit: '50kb'}))
 app.use(cookieParser())
