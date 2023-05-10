@@ -77,7 +77,7 @@ const  userRouter = require('./routes/userRoute');
 // const orderRouter =  require('./routes/orderRoute')
 
 app.use('/api/v1/user', userRouter);
-// app.use('/api/v1/products', productRouter);
+app.use('/api/v1/products', productRouter);
 // app.use('/api/v1/bakeries',bakeryRouter )
 // // app.use('/api/v1/posts',fileUploadRouter );
 // app.use('/api/v1/cart_items',cartRouter);

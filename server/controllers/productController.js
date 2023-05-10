@@ -13,7 +13,7 @@ const sendResponse = (statusCode, res, message, data) =>{
 }
 
 exports.createProduct = catchAsync( async (req,res,next) => {
-    const new_product = await  Product.create({
+    const new_product = await Product.create({
         productName : req.body.productName,
         buyingPrice  :  req.body.buyingPrice,
         sellingPrice  :  req.body.sellingPrice,
@@ -35,7 +35,7 @@ exports.createProduct = catchAsync( async (req,res,next) => {
 
 
 exports.getAllProducts =  catchAsync( async (req,res, next) => {
-    const all_products = await  Product.find({deleted : false});
+    const all_products = await Product.find({deleted : false});
 
     if(!all_products) {
         return  next(new AppError("No data found in this document", 404))
@@ -55,7 +55,7 @@ exports.getProductById = catchAsync( async (req,res, next) => {
 })
 
 exports.updateProduuct =  catchAsync(async (req,res,next) =>  {
-    const current_product =   await Product.findByIdAndUpdate(req.params.id, req.body, {
+    const current_product = await Product.findByIdAndUpdate(req.params.id, req.body, {
         new :  true,
         runValidators : true
     })
