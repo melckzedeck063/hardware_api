@@ -48,7 +48,7 @@ mongoose.set('strictQuery', false)
 
 app.use(bodyParser.json({limit: '50kb'}))
 app.use(cookieParser())
-app.use(cors())
+app.use(cors());
 
 if (process.env.NODE_ENV === "development") {
     app.use(morgan('dev'))
