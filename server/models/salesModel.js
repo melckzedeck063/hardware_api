@@ -19,6 +19,10 @@ const SalesSchema = mongoose.Schema({
         type: String,
         default : 0
     },
+   Unit: {
+        type: String,
+        default : 'pic'
+    },
     product: {
         type: mongoose.Schema.ObjectId,
         ref: 'Product',
