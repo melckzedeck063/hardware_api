@@ -22,6 +22,7 @@ exports.createProduct = catchAsync( async (req,res,next) => {
         quantity : req.body.quantity,
         date_published :  req.body.date_published,
         created_by :  req.user.id,
+        unit : req.body.unit,
         deleted : req.body.deleted,
     });
 

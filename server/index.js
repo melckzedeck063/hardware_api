@@ -54,7 +54,7 @@ if (process.env.NODE_ENV === "development") {
     app.use(morgan('dev'))
 }
 
-// const MongoUrl = `mongodb://localhost:27017/clinton_electrical_solution`;
+//  const MongoUrl = `mongodb://localhost:27017/clinton_electrical_solution`;
 const  MongoUrl = `mongodb://${process.env.DB_USERNAME}:${process.env.PASSWORD}@cluster0-shard-00-00.xwzd4.mongodb.net:27017,cluster0-shard-00-01.xwzd4.mongodb.net:27017,cluster0-shard-00-02.xwzd4.mongodb.net:27017/clinton_electrical_solution?ssl=true&replicaSet=atlas-khbsbw-shard-0&authSource=admin&retryWrites=true&w=majority`
 
 mongoose.connect(MongoUrl, {
@@ -71,6 +71,7 @@ MongoClient.connect(MongoUrl, { useUnifiedTopology: true }, (err, client) => {
 
 const  userRouter = require('./routes/userRoute');
 const productRouter =   require('./routes/productRoute')
+const salesRouter =   require('./routes/salesRoute');
 // const bakeryRouter =  require('./routes/bakeryRoute');
 // // const fileUploadRouter =  require('./routes/fileUpload_router');
 // const  cartRouter =  require('./routes/cartItemRoute');
@@ -78,6 +79,7 @@ const productRouter =   require('./routes/productRoute')
 
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/products', productRouter);
+app.use('/api/v1/sales', salesRouter);
 // app.use('/api/v1/bakeries',bakeryRouter )
 // // app.use('/api/v1/posts',fileUploadRouter );
 // app.use('/api/v1/cart_items',cartRouter);

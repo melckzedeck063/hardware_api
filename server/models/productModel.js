@@ -33,6 +33,10 @@ const ProductSchema =  mongooose.Schema({
         required : [true, "quantity is required"],
         trim : true
     },
+   unit: {
+        type : String,
+        default : "pic"
+    },
     date_published : {
         type  :  Date,
         default :  Date.now()
