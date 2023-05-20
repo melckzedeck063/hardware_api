@@ -89,8 +89,8 @@ exports.monthlyReport = catchAsync(async (req, res, next) => {
         {
             $group: {
                 _id: "",
-                total_sales: { $sum: { $multiply: [{ $toInt: '$price' }, { $toInt: '$amount' }] } },
-                price: { $push: '$price' },
+                total_sales: { $sum: { $multiply: [{ $toInt: '$sellingPrice' }, { $toInt: '$amount' }] } },
+                price: { $push: '$sellingPrice' },
                 amount: { $push: "$amount" },
                 supplier : {$push : '$supplier'},
                 date : {$push : '$date_sold'},
