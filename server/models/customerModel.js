@@ -16,7 +16,6 @@ const CustomerSchema = mongoose.Schema({
         type : String,
         unique : [true, "Provided email already exist, try another  one"],
         lowercase : true,
-        validate : [validator.isEmail, 'Please provide a valid email']
     },
     telephone : {
         type : String,
